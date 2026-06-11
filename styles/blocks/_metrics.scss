@@ -1,0 +1,48 @@
+@use "../helpers" as *;
+
+.metrics {
+  // .metrics__list
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  // .metrics__item
+
+  &__item {
+    display: flex;
+    flex-direction: column-reverse;
+    row-gap: rem(10);
+    padding: rem(50);
+
+    @include laptop {
+      padding: rem(30) rem(40);
+      row-gap: rem(2);
+    }
+
+    @include tablet {
+      row-gap: 0;
+      padding: rem(20);
+    }
+
+    &:first-child {
+      padding-left: 0;
+    }
+    &:not(:last-child) {
+      border-right: var(--border);
+    }
+  }
+
+  // .metrics__value
+
+  &__value {
+    font-weight: 600;
+  }
+
+  // .metrics__sign
+
+  &__sign {
+    color: var(--color-accent);
+  }
+}
